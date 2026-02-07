@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto redirecting...</title>
+    <!-- 3秒后自动跳转到目标网址 -->
+    <meta http-equiv="refresh" content="3; url=https://www.xiaohongshu.com/user/profile/69855b0f00000000260395b3?xsec_token=YBylo0Yi4ngqURfKRd6xwA6ElPEQ2KSU9QCawEf4ZUCpY=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=OD86NThHNE82NzUyOTgwNjg5OTo9Okg8&apptime=1770434407&share_id=d08977b85c72441aa9aeaf86c7439941">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #000000; /* 您的品牌 */
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 1.5em;
+            color: #CE2027;
+            font-weight: bold;
+        }
+        .link {
+            margin-top: 30px;
+            font-size: 1em;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">KH Go Media's Redirector</div>
+        <div class="message">🚀 正在带您前往 XHS 页面...</div>
+        <div class="countdown" id="countdown">3</div>
+        <div class="link">
+            如果页面没有自动跳转，请点击：<br>
+            <a href="https://www.xiaohongshu.com/user/profile/69855b0f00000000260395b3?xsec_token=YBylo0Yi4ngqURfKRd6xwA6ElPEQ2KSU9QCawEf4ZUCpY=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=OD86NThHNE82NzUyOTgwNjg5OTo9Okg8&apptime=1770434407&share_id=d08977b85c72441aa9aeaf86c7439941" id="manual-link">👉 点击这里手动跳转</a>
+        </div>
+    </div>
+
+    <script>
+        // 倒计时动画
+        let seconds = 3;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
