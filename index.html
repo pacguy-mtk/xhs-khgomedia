@@ -1,71 +1,474 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-    <title>Auto redirecting...</title>
-    <!-- 3秒后自动跳转到目标网址 -->
-    <meta http-equiv="refresh" content="3; url=https://www.xiaohongshu.com/user/profile/69855b0f00000000260395b3?xsec_token=YBylo0Yi4ngqURfKRd6xwA6ElPEQ2KSU9QCawEf4ZUCpY=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=OD86NThHNE82NzUyOTgwNjg5OTo9Okg8&apptime=1770434407&share_id=d08977b85c72441aa9aeaf86c7439941">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在跳转到小红书 | 您的品牌名称</title>
+    <meta http-equiv="refresh" content="5; url=https://www.xiaohongshu.com/user/profile/69855b0f00000000260395b3?xsec_token=YBylo0Yi4ngqURfKRd6xwA6ElPEQ2KSU9QCawEf4ZUCpY=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=OD86NThHNE82NzUyOTgwNjg5OTo9Okg8&apptime=1770434407&share_id=d08977b85c72441aa9aeaf86c7439941">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
+            background: 
+                linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.9)),
+                url('https://raw.githubusercontent.com/pacguy-mtk/calculator/refs/heads/main/z726c97a9-adf4-4272-a92a-bedf76daaeee.jpg&auto=format&fit=crop&w=2560&q=80') center/cover no-repeat fixed;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
         }
+
         .container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: inline-block;
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
         }
-        .logo {
-            font-size: 2em;
-            font-weight: bold;
-            color: #000000; /* 您的品牌 */
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #CE2027, #0066cc);
+            z-index: 2;
+        }
+
+        /* 品牌Logo区域 - 请替换为您的图片 */
+        .brand-logo-container {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .brand-logo {
+            max-width: 200px;
+            max-height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+        }
+
+        /* 如果使用文字Logo */
+        .text-logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #fff, #CE2027);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(206, 32, 39, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 40px 0 25px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #fff, #ff7b9c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .redirect-box {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 18px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: left;
+        }
+
+        .platform-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            color: #ff2442;
+            flex-shrink: 0;
+        }
+
+        .platform-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .platform-text p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.1rem;
+        }
+
+        .countdown-container {
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 18px;
+        }
+
+        .countdown-label {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 20px;
         }
-        .message {
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 20px;
+
+        .countdown-display {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
-        .countdown {
-            font-size: 1.5em;
+
+        .countdown-number {
+            font-size: 5rem;
+            font-weight: 800;
             color: #CE2027;
-            font-weight: bold;
+            min-width: 100px;
+            text-shadow: 0 0 25px rgba(206, 32, 39, 0.6);
+            animation: pulse 1s infinite;
         }
-        .link {
+
+        .countdown-unit {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 1; 
+            }
+            50% { 
+                transform: scale(1.05);
+                opacity: 0.8; 
+            }
+        }
+
+        .progress-bar {
+            height: 10px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
             margin-top: 30px;
-            font-size: 1em;
+            overflow: hidden;
         }
-        a {
-            color: #0066cc;
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #CE2027, #ff7b9c);
+            border-radius: 5px;
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes progress {
+            to { width: 100%; }
+        }
+
+        .manual-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 20px 50px;
+            background: linear-gradient(90deg, #0066cc, #004c99);
+            color: white;
             text-decoration: none;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .manual-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.6);
+            background: linear-gradient(90deg, #004c99, #003366);
+        }
+
+        .manual-link:active {
+            transform: translateY(-2px);
+        }
+
+        .manual-link i {
+            margin-right: 12px;
+            font-size: 1.2em;
+        }
+
+        .security-note {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .security-note i {
+            color: #4CAF50;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .text-logo, .main-title {
+                font-size: 2.3rem;
+            }
+            
+            .brand-logo {
+                max-width: 160px;
+            }
+            
+            .countdown-number {
+                font-size: 3.5rem;
+                min-width: 70px;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .platform-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .manual-link {
+                padding: 18px 35px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .text-logo {
+                font-size: 2rem;
+            }
+            
+            .countdown-number {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">KH Go Media's Redirector</div>
-        <div class="message">🚀 正在带您前往 XHS 页面...</div>
-        <div class="countdown" id="countdown">3</div>
-        <div class="link">
-            如果页面没有自动跳转，请点击：<br>
-            <a href="https://www.xiaohongshu.com/user/profile/69855b0f00000000260395b3?xsec_token=YBylo0Yi4ngqURfKRd6xwA6ElPEQ2KSU9QCawEf4ZUCpY=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=OD86NThHNE82NzUyOTgwNjg5OTo9Okg8&apptime=1770434407&share_id=d08977b85c72441aa9aeaf86c7439941" id="manual-link">👉 点击这里手动跳转</a>
+        <div class="brand-logo-container">
+            <img scr="https://raw.githubusercontent.com/pacguy-mtk/calculator/refs/heads/main/z2026-02-08-13.12.11.jpeg" class="brand-logo">
         </div>
+        
+        <div class="tagline">专业的数字营销解决方案</div>
+        
+        <h1 class="main-title">正在安全跳转到小红书</h1>
+        <p class="subtitle">感谢您访问我们的页面，我们正在为您重定向到官方小红书页面，请稍候片刻...</p>
+        
+        <div class="redirect-box">
+            <div class="platform-info">
+                <div class="platform-icon">
+                    <i class="fab fa-weixin"></i>
+                </div>
+                <div class="platform-text">
+                    <h3>小红书 - 官方用户主页</h3>
+                    <p>https://www.xiaohongshu.com/user/profile/...</p>
+                    <p style="margin-top: 10px; font-size: 1rem; color: rgba(255, 255, 255, 0.65);">
+                        <i class="fas fa-lock"></i> 安全的官方链接 • 加密跳转
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="countdown-container">
+            <div class="countdown-label">⏳ 页面将在 <span id="seconds">5</span> 秒后自动跳转</div>
+            <div class="countdown-display">
+                <div class="countdown-number" id="countdown">5</div>
+                <div class="countdown-unit">秒</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+        
+        <a href="https://www.xiaohongshu.com/user/profile/69855b0f00000000260395b3?xsec_token=YBylo0Yi4ngqURfKRd6xwA6ElPEQ2KSU9QCawEf4ZUCpY=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=OD86NThHNE82NzUyOTgwNjg5OTo9Okg8&apptime=1770434407&share_id=d08977b85c72441aa9aeaf86c7439941" 
+           class="manual-link" id="manual-link">
+            <i class="fas fa-external-link-alt"></i> 立即跳转，无需等待
+        </a>
+        
+        <div class="security-note">
+            <p><i class="fas fa-shield-alt"></i> 安全提示：此跳转页面由您的品牌官方提供，将安全地引导您到目标页面。请确保您访问的是正确的官方页面。</p>
+            <p style="margin-top: 15px;"><i class="fas fa-info-circle"></i> 如果您看到此页面超过10秒仍未跳转，请尝试刷新页面或点击上方按钮手动跳转。</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2023 您的品牌名称 版权所有 | 专业的数字营销解决方案</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">本页面安全认证 <i class="fas fa-check-circle" style="color: #4CAF50;"></i></p>
     </div>
 
     <script>
-        // 倒计时动画
-        let seconds = 3;
+        // 倒计时功能
+        let seconds = 5;
         const countdownElement = document.getElementById('countdown');
+        const secondsElement = document.getElementById('seconds');
+        
         const countdownInterval = setInterval(() => {
             seconds--;
             countdownElement.textContent = seconds;
+            secondsElement.textContent = seconds;
+            
             if (seconds <= 0) {
                 clearInterval(countdownInterval);
+                countdownElement.textContent = "跳转中...";
+                secondsElement.textContent = "跳转中...";
             }
         }, 1000);
+
+        // 添加点击动画
+        document.getElementById('manual-link').addEventListener('click', function(e) {
+            // 创建点击涟漪效果
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.7);
+                transform: scale(0);
+                animation: ripple-animation 0.7s ease-out;
+                width: ${size}px;
+                height: ${size}px;
+                top: ${y}px;
+                left: ${x}px;
+                pointer-events: none;
+            `;
+            
+            // 添加涟漪动画的CSS
+            if (!document.querySelector('#ripple-styles')) {
+                const style = document.createElement('style');
+                style.id = 'ripple-styles';
+                style.textContent = `
+                    @keyframes ripple-animation {
+                        to {
+                            transform: scale(4);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            this.appendChild(ripple);
+            
+            // 移除动画元素
+            setTimeout(() => {
+                ripple.remove();
+            }, 700);
+        });
+
+        // 添加键盘快捷键支持
+        document.addEventListener('keydown', function(e) {
+            // 空格键或回车键触发跳转
+            if (e.code === 'Space' || e.code === 'Enter') {
+                e.preventDefault();
+                document.getElementById('manual-link').click();
+            }
+            
+            // ESC键停止倒计时
+            if (e.code === 'Escape') {
+                clearInterval(countdownInterval);
+                document.getElementById('countdown').textContent = "已停止";
+                document.getElementById('seconds').textContent = "已停止";
+                document.querySelector('.progress-fill').style.animationPlayState = 'paused';
+                
+                // 显示停止提示
+                const label = document.querySelector('.countdown-label');
+                label.innerHTML = '⏸️ 倒计时已手动停止，请点击上方按钮跳转';
+                label.style.color = '#CE2027';
+            }
+        });
+
+        // 页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.8s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
     </script>
 </body>
 </html>
